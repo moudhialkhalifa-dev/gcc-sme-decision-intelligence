@@ -1,0 +1,18 @@
+{
+  "name": "UCI Online Retail II (case study)",
+  "mapping": {
+    "timestamp": "InvoiceDate",
+    "transaction_id": "Invoice",
+    "customer_id": "Customer ID",
+    "product_id": "StockCode",
+    "product_name": "Description",
+    "quantity": "Quantity",
+    "unit_price": "Price",
+    "location": "Country"
+  },
+  "currency": "GBP",
+  "timezone": "Europe/London",
+  "return_prefixes": ["C"],
+  "non_product_pattern": "^(POST|DOT|M|m|D|S|B|C2|C3|BANK CHARGES|ADJUST\\d*|AMAZONFEE|CRUK|PADS|TEST\\d+|gift_\\d+_\\d+)$",
+  "drop_exact_duplicates": true
+}

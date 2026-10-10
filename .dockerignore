@@ -1,0 +1,8 @@
+**/node_modules
+**/__pycache__
+frontend/dist
+var
+data/processed
+data/raw/*.csv
+.git
+docs/screenshots

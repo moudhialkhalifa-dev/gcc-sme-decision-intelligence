@@ -1,0 +1,383 @@
+{
+  "cutoff": "2011-12-09",
+  "customers": 5851,
+  "definitions": {
+    "recency_days": "Days from the customer's latest purchase to the cutoff date.",
+    "frequency": "Number of distinct sale transactions before the cutoff.",
+    "monetary": "Sales minus returns before the cutoff (historical value, not a prediction).",
+    "scores": "1-5 from percentile rank within this dataset; ties share a score."
+  },
+  "segments": [
+    {
+      "segment": "High-value",
+      "customers": 1246,
+      "customer_share": 0.21295505041873183,
+      "revenue": 11243045.239999998,
+      "revenue_share": 0.6878172004948053,
+      "median_recency_days": 16.0,
+      "median_frequency": 11.0,
+      "median_monetary": 3922.3599999999997,
+      "mean_monetary": 9023.310786516853,
+      "rule": "Recency, frequency and spend scores all 4 or 5 (top 40% on each).",
+      "description": "Typically last bought 16 days before the cutoff, 11 purchase(s), GBP 3,922 spent (medians)."
+    },
+    {
+      "segment": "Loyal",
+      "customers": 1286,
+      "customer_share": 0.21979148863442147,
+      "revenue": 2491349.2,
+      "revenue_share": 0.1524135850759036,
+      "median_recency_days": 66.0,
+      "median_frequency": 4.0,
+      "median_monetary": 1133.345,
+      "mean_monetary": 1937.285536547434,
+      "rule": "Recency score 3+ and frequency score 3+, but not High-value.",
+      "description": "Typically last bought 66 days before the cutoff, 4 purchase(s), GBP 1,133 spent (medians)."
+    },
+    {
+      "segment": "New",
+      "customers": 368,
+      "customer_share": 0.06289523158434455,
+      "revenue": 206598.78,
+      "revenue_share": 0.012639119691494028,
+      "median_recency_days": 23.0,
+      "median_frequency": 1.0,
+      "median_monetary": 324.41499999999996,
+      "mean_monetary": 561.4097282608695,
+      "rule": "First purchase within 60 days of the cutoff.",
+      "description": "Typically last bought 23 days before the cutoff, 1 purchase(s), GBP 324 spent (medians)."
+    },
+    {
+      "segment": "Occasional",
+      "customers": 1261,
+      "customer_share": 0.21551871474961545,
+      "revenue": 592077.54,
+      "revenue_share": 0.03622160254143487,
+      "median_recency_days": 194.0,
+      "median_frequency": 1.0,
+      "median_monetary": 343.82,
+      "mean_monetary": 469.53016653449646,
+      "rule": "Everyone else: infrequent buyers who are neither new nor long inactive.",
+      "description": "Typically last bought 194 days before the cutoff, 1 purchase(s), GBP 344 spent (medians)."
+    },
+    {
+      "segment": "At-risk",
+      "customers": 778,
+      "customer_share": 0.1329687232951632,
+      "revenue": 1532154.57,
+      "revenue_share": 0.09373281389221934,
+      "median_recency_days": 371.5,
+      "median_frequency": 4.0,
+      "median_monetary": 1183.6999999999998,
+      "mean_monetary": 1969.350347043702,
+      "rule": "Recency score 1-2 (bottom 40%) with frequency score 3+ or spend score 4+: was valuable, now inactive.",
+      "description": "Typically last bought 372 days before the cutoff, 4 purchase(s), GBP 1,184 spent (medians)."
+    },
+    {
+      "segment": "Dormant",
+      "customers": 912,
+      "customer_share": 0.15587079131772347,
+      "revenue": 280753.27,
+      "revenue_share": 0.01717567830414265,
+      "median_recency_days": 550.0,
+      "median_frequency": 1.0,
+      "median_monetary": 244.38,
+      "mean_monetary": 307.84349780701757,
+      "rule": "Recency score 1 (least recent 20%) with low frequency and spend.",
+      "description": "Typically last bought 550 days before the cutoff, 1 purchase(s), GBP 244 spent (medians)."
+    }
+  ],
+  "top10_customer_revenue_share": 0.16270660417969712,
+  "distributions": {
+    "recency_days": [
+      8.0,
+      25.0,
+      95.0,
+      379.0,
+      530.0
+    ],
+    "frequency": [
+      1.0,
+      1.0,
+      3.0,
+      7.0,
+      13.0
+    ],
+    "monetary": [
+      157.2,
+      330.885,
+      840.24,
+      2166.195,
+      5224.85
+    ]
+  },
+  "caveats": [
+    "Only customers with an ID are included.",
+    "At-risk and Dormant are rule-based inactivity labels, not churn probabilities.",
+    "Spend shown is historical; predicted lifetime value is not modelled."
+  ],
+  "kmeans": {
+    "k": 4,
+    "diagnostics": [
+      {
+        "k": 2,
+        "silhouette": 0.43560117246858243,
+        "inertia": 8690.237240095868,
+        "stability_ari": 0.9829302660264071,
+        "stability_ari_min": 0.9499777906651826
+      },
+      {
+        "k": 3,
+        "silhouette": 0.3429022793903051,
+        "inertia": 6494.0028635578965,
+        "stability_ari": 0.9450063810318816,
+        "stability_ari_min": 0.8928342173183228
+      },
+      {
+        "k": 4,
+        "silhouette": 0.3602774706044709,
+        "inertia": 5071.989031530512,
+        "stability_ari": 0.9266532448115304,
+        "stability_ari_min": 0.8764915755067587
+      },
+      {
+        "k": 5,
+        "silhouette": 0.33778617442682124,
+        "inertia": 4275.901352828769,
+        "stability_ari": 0.8815457048494771,
+        "stability_ari_min": 0.7974813268085724
+      },
+      {
+        "k": 6,
+        "silhouette": 0.3282088809614714,
+        "inertia": 3727.7671180488287,
+        "stability_ari": 0.8522138896437766,
+        "stability_ari_min": 0.750575820274203
+      },
+      {
+        "k": 7,
+        "silhouette": 0.293982708814567,
+        "inertia": 3345.6575657314825,
+        "stability_ari": 0.6851652781324159,
+        "stability_ari_min": 0.46063466783708706
+      }
+    ],
+    "selection_rule": "Highest silhouette among k >= 3 with bootstrap stability ARI >= 0.85; falls back to highest silhouette if none pass.",
+    "passed_stability": true,
+    "agreement_with_rfm_ari": 0.3982247027499046,
+    "crosstab": {
+      "rows": [
+        "At-risk",
+        "Dormant",
+        "High-value",
+        "Loyal",
+        "New",
+        "Occasional"
+      ],
+      "cols": [
+        "Cooling, mid spend",
+        "Inactive, low spend",
+        "Recent, high spend",
+        "Recent, mid spend"
+      ],
+      "values": [
+        [
+          677,
+          86,
+          15,
+          0
+        ],
+        [
+          19,
+          893,
+          0,
+          0
+        ],
+        [
+          78,
+          0,
+          1054,
+          114
+        ],
+        [
+          609,
+          21,
+          121,
+          535
+        ],
+        [
+          1,
+          45,
+          6,
+          316
+        ],
+        [
+          97,
+          884,
+          0,
+          280
+        ]
+      ]
+    },
+    "clusters": [
+      {
+        "segment": "Recent, high spend",
+        "customers": 1196,
+        "customer_share": 0.2044095026491198,
+        "revenue": 12051738.39,
+        "revenue_share": 0.7372907236034189,
+        "median_recency_days": 17.0,
+        "median_frequency": 13.0,
+        "median_monetary": 4779.8150000000005,
+        "mean_monetary": 10076.704339464883,
+        "description": "Typically last bought 17 days before the cutoff, 13 purchase(s), GBP 4,780 spent (medians)."
+      },
+      {
+        "segment": "Cooling, mid spend",
+        "customers": 1481,
+        "customer_share": 0.2531191249359084,
+        "revenue": 2685890.91,
+        "revenue_share": 0.164315087871215,
+        "median_recency_days": 185.0,
+        "median_frequency": 4.0,
+        "median_monetary": 1384.25,
+        "mean_monetary": 1813.565773126266,
+        "description": "Typically last bought 185 days before the cutoff, 4 purchase(s), GBP 1,384 spent (medians)."
+      },
+      {
+        "segment": "Recent, mid spend",
+        "customers": 1245,
+        "customer_share": 0.2127841394633396,
+        "revenue": 1027714.4,
+        "revenue_share": 0.06287261381830024,
+        "median_recency_days": 23.0,
+        "median_frequency": 3.0,
+        "median_monetary": 705.79,
+        "mean_monetary": 825.4734136546185,
+        "description": "Typically last bought 23 days before the cutoff, 3 purchase(s), GBP 706 spent (medians)."
+      },
+      {
+        "segment": "Inactive, low spend",
+        "customers": 1929,
+        "customer_share": 0.3296872329516322,
+        "revenue": 580634.8999999999,
+        "revenue_share": 0.035521574707065864,
+        "median_recency_days": 402.0,
+        "median_frequency": 1.0,
+        "median_monetary": 257.06,
+        "mean_monetary": 301.0030585795749,
+        "description": "Typically last bought 402 days before the cutoff, 1 purchase(s), GBP 257 spent (medians)."
+      }
+    ],
+    "preprocessing": "log1p of recency, frequency and spend, then z-score standardisation."
+  },
+  "out_of_time": {
+    "as_of": "2011-09-10",
+    "window_days": 90,
+    "until": "2011-12-09",
+    "by_segment": [
+      {
+        "segment": "High-value",
+        "customers": 1226,
+        "repurchase_rate": 0.800978792822186,
+        "mean_next_spend": 1599.406615008157
+      },
+      {
+        "segment": "Loyal",
+        "customers": 974,
+        "repurchase_rate": 0.5154004106776181,
+        "mean_next_spend": 301.61797741273097
+      },
+      {
+        "segment": "New",
+        "customers": 212,
+        "repurchase_rate": 0.5849056603773585,
+        "mean_next_spend": 620.7905188679246
+      },
+      {
+        "segment": "Occasional",
+        "customers": 1357,
+        "repurchase_rate": 0.2763448784082535,
+        "mean_next_spend": 124.95184966838613
+      },
+      {
+        "segment": "At-risk",
+        "customers": 658,
+        "repurchase_rate": 0.30547112462006076,
+        "mean_next_spend": 200.90120060790272
+      },
+      {
+        "segment": "Dormant",
+        "customers": 829,
+        "repurchase_rate": 0.12424607961399277,
+        "mean_next_spend": 50.97412545235223
+      }
+    ],
+    "migration": {
+      "rows": [
+        "High-value",
+        "Loyal",
+        "New",
+        "Occasional",
+        "At-risk",
+        "Dormant"
+      ],
+      "cols": [
+        "High-value",
+        "Loyal",
+        "Occasional",
+        "At-risk",
+        "Dormant"
+      ],
+      "values": [
+        [
+          874,
+          336,
+          0,
+          16,
+          0
+        ],
+        [
+          233,
+          447,
+          0,
+          294,
+          0
+        ],
+        [
+          21,
+          60,
+          131,
+          0,
+          0
+        ],
+        [
+          22,
+          233,
+          903,
+          19,
+          180
+        ],
+        [
+          78,
+          119,
+          6,
+          449,
+          6
+        ],
+        [
+          2,
+          44,
+          57,
+          0,
+          726
+        ]
+      ]
+    },
+    "valuable_then": 2200,
+    "valuable_slipped": 310,
+    "valuable_slipped_prior_value": 630986.3400000001,
+    "valuable_prior_value": 11086944.99,
+    "note": "Share of each segment (as labelled at the earlier date) that bought again in the following window."
+  }
+}

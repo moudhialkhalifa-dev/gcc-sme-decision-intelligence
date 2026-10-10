@@ -1,0 +1,104 @@
+{
+  "description": "Recall on artificially injected shocks; factor multiplies the real value on the injected day.",
+  "seeds": 30,
+  "injections_per_seed": 10,
+  "candidate_days": 532,
+  "unmodified_data": {
+    "statistical_days": 18,
+    "isolation_forest_days": 18,
+    "both": 11,
+    "jaccard": 0.44,
+    "note": "Agreement between two unlabelled detectors; it is not an accuracy figure.",
+    "scored_days": 555
+  },
+  "scenarios": {
+    "all_metrics_shift": [
+      {
+        "factor": 0.3,
+        "recall_statistical": 0.6833333333333333,
+        "recall_isolation_forest": 0.3366666666666667,
+        "extra_flags_statistical": 0.3333333333333333,
+        "extra_flags_isolation_forest": 0.36666666666666664
+      },
+      {
+        "factor": 0.5,
+        "recall_statistical": 0.15666666666666668,
+        "recall_isolation_forest": 0.06666666666666668,
+        "extra_flags_statistical": 0.36666666666666664,
+        "extra_flags_isolation_forest": 0.43333333333333335
+      },
+      {
+        "factor": 0.7,
+        "recall_statistical": 0.02333333333333333,
+        "recall_isolation_forest": 0.023333333333333334,
+        "extra_flags_statistical": 0.4666666666666667,
+        "extra_flags_isolation_forest": 0.16666666666666666
+      },
+      {
+        "factor": 1.5,
+        "recall_statistical": 0.08000000000000002,
+        "recall_isolation_forest": 0.06000000000000001,
+        "extra_flags_statistical": 0.9,
+        "extra_flags_isolation_forest": 0.1
+      },
+      {
+        "factor": 2.0,
+        "recall_statistical": 0.29666666666666675,
+        "recall_isolation_forest": 0.26999999999999996,
+        "extra_flags_statistical": 0.8666666666666667,
+        "extra_flags_isolation_forest": 0.1
+      },
+      {
+        "factor": 3.0,
+        "recall_statistical": 0.67,
+        "recall_isolation_forest": 0.5933333333333334,
+        "extra_flags_statistical": 0.9666666666666667,
+        "extra_flags_isolation_forest": 0.0
+      }
+    ],
+    "revenue_only_shift": [
+      {
+        "factor": 0.3,
+        "recall_statistical": 0.22999999999999998,
+        "recall_isolation_forest": 0.03333333333333333,
+        "extra_flags_statistical": 0.03333333333333333,
+        "extra_flags_isolation_forest": 0.43333333333333335
+      },
+      {
+        "factor": 0.5,
+        "recall_statistical": 0.02333333333333333,
+        "recall_isolation_forest": 0.016666666666666666,
+        "extra_flags_statistical": 0.06666666666666667,
+        "extra_flags_isolation_forest": 0.16666666666666666
+      },
+      {
+        "factor": 0.7,
+        "recall_statistical": 0.0,
+        "recall_isolation_forest": 0.010000000000000002,
+        "extra_flags_statistical": 0.06666666666666667,
+        "extra_flags_isolation_forest": 0.13333333333333333
+      },
+      {
+        "factor": 1.5,
+        "recall_statistical": 0.016666666666666666,
+        "recall_isolation_forest": 0.0,
+        "extra_flags_statistical": 0.1,
+        "extra_flags_isolation_forest": 0.03333333333333333
+      },
+      {
+        "factor": 2.0,
+        "recall_statistical": 0.06000000000000001,
+        "recall_isolation_forest": 0.0033333333333333335,
+        "extra_flags_statistical": 0.06666666666666667,
+        "extra_flags_isolation_forest": 0.13333333333333333
+      },
+      {
+        "factor": 3.0,
+        "recall_statistical": 0.24000000000000002,
+        "recall_isolation_forest": 0.02,
+        "extra_flags_statistical": 0.06666666666666667,
+        "extra_flags_isolation_forest": 0.1
+      }
+    ]
+  }
+}
